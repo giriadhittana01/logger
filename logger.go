@@ -30,7 +30,8 @@ func newLogger() (logger, error) {
 }
 
 func currentDate() string {
-	currentTime := time.Now().Format("2006-01-02 15:04:05")
+	formatDate := "2006-01-02 15:04:05"
+	currentTime := time.Now().Format(formatDate)
 	return currentTime
 }
 
