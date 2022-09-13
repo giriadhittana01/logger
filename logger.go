@@ -1,9 +1,10 @@
-package log
+package logger
 
 import (
 	"flag"
 	logexternal "log"
 	"os"
+	"time"
 )
 
 var (
@@ -28,8 +29,13 @@ func newLogger() (logger, error) {
 	}, nil
 }
 
+func currentDate() string {
+	currentTime := time.Now().Format("2006-01-02 15:04:05")
+	return currentTime
+}
+
 // Print information
 func Println(s string) {
-	infolog.log.Println(s)
+	infolog.log.Println(currentDate() + " - " + s)
 	logexternal.Println(s)
 }
