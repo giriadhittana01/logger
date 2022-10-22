@@ -37,6 +37,6 @@ func currentDate() string {
 
 // Print information
 func Println(s string) {
-	infolog.log.Println(currentDate() + " - " + s)
+	infolog.log.Println(s)
 	logexternal.Println(s)
 }
