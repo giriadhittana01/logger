@@ -1,4 +1,4 @@
-package logger
+package main
 
 import (
 	"flag"
@@ -23,7 +23,7 @@ func newLogger() (logger, error) {
 	if err1 != nil {
 		panic(err1)
 	}
-	Log := logexternal.New(file, "", logexternal.LstdFlags|logexternal.Lshortfile)
+	Log := logexternal.New(file, "", 0)
 	return logger{
 		log: Log,
 	}, nil
